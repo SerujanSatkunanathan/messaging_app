@@ -59,26 +59,31 @@ class _LoginpageState extends State<Loginpage> {
                       ),
                     ),
                     Buttons(onTap: () {}, text: "Login"),
-                    SizedBox(
-                      height: 20,
-                      child: Row(
-                        children: [
-                          Text(
-                            "Dont have an Account?",
-                            style: TextStyle(
-                              color: Colors.white,
+                    Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        height: 20,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Dont have an Account?",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                " SignUp",
-                                style: TextStyle(
-                                  color: Colors.cyanAccent,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ))
-                        ],
+                            GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  " SignUp",
+                                  style: TextStyle(
+                                    color: Colors.cyanAccent,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))
+                          ],
+                        ),
                       ),
                     )
                   ],
