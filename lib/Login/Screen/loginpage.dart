@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:messaging_app/Login/Screen/signup.dart';
 import 'package:messaging_app/Login/widget/button.dart';
 import 'package:messaging_app/Login/widget/textfield.dart';
 
@@ -74,7 +75,12 @@ class _LoginpageState extends State<Loginpage> {
                               ),
                             ),
                             GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Signup()));
+                                },
                                 child: Text(
                                   " SignUp",
                                   style: TextStyle(
