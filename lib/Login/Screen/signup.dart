@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messaging_app/Login/Screen/loginpage.dart';
 import 'package:messaging_app/Login/widget/button.dart';
 import 'package:messaging_app/Login/widget/textfield.dart';
+import 'package:messaging_app/Services/authentication.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -15,6 +16,13 @@ class _SignupState extends State<Signup> {
 
   final TextEditingController passwordcontroller = TextEditingController();
   final TextEditingController namecontroller = TextEditingController();
+
+  void signup() async {
+    final res = await Authentication().signupUser(
+        email: emailcontroller.text,
+        password: passwordcontroller.text,
+        name: namecontroller.text);
+  }
 
   @override
   Widget build(BuildContext context) {
