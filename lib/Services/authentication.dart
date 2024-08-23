@@ -14,7 +14,7 @@ class Authentication {
       {required String email,
       required String password,
       required String name}) async {
-    String res = "Some Error occurred!";
+    String res = "error";
     try {
       //to register user with email and password
       UserCredential credential = await _auth.createUserWithEmailAndPassword(
@@ -26,7 +26,7 @@ class Authentication {
         'email': email,
         'uid': credential.user!.uid,
       });
-      res = "Added Successfully.";
+      res = "success";
     } catch (e) {
       print(e.toString());
     }

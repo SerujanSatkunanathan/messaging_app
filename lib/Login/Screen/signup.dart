@@ -18,10 +18,15 @@ class _SignupState extends State<Signup> {
   final TextEditingController namecontroller = TextEditingController();
 
   void signup() async {
-    final res = await Authentication().signupUser(
+    String res = await Authentication().signupUser(
         email: emailcontroller.text,
         password: passwordcontroller.text,
         name: namecontroller.text);
+    if (res == 'success') {
+      setState(() {});
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Loginpage()));
+    }
   }
 
   @override
