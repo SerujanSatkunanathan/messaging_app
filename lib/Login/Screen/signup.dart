@@ -48,7 +48,7 @@ class _SignupState extends State<Signup> {
         text: 'Fetching your data',
       );
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Homepage()));
+          context, MaterialPageRoute(builder: (context) => Loginpage()));
     } else {
       QuickAlert.show(
         context: context,

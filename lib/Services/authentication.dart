@@ -52,6 +52,7 @@ class Authentication {
           email: email,
           password: password,
         );
+
         res = "success";
       } else {
         res = "Please fill all the fields";

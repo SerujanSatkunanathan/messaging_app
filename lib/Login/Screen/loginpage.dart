@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messaging_app/chat/chatpage.dart';
 import 'package:messaging_app/Login/Screen/homepage.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,7 @@ class _LoginpageState extends State<Loginpage> {
 
   final TextEditingController emailcontroller = TextEditingController();
   final TextEditingController passwordcontroller = TextEditingController();
+  //final TextEditingController namecontroller = TextEditingController();
   bool isloading = false;
 
   void despose() {
@@ -43,8 +45,8 @@ class _LoginpageState extends State<Loginpage> {
         title: 'Loading',
         text: 'Fetching your data',
       );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Homepage()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => Chatpage(name: res)));
     } else {
       setState(() {
         isloading = false;
