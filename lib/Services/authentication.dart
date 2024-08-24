@@ -48,17 +48,27 @@ class Authentication {
     String res = "error";
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
-        await _auth.signInWithEmailAndPassword(
+        // Attempt to sign in the user with email and password
+        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
           email: email,
           password: password,
         );
 
-        res = "success";
+        String uid = userCredential.user!.uid;
+        DocumentSnapshot userDoc =
+            await FirebaseFirestore.instance.collection('user').doc(uid).get();
+
+        String? userName = userDoc['name'] as String?;
+        if (userName != null) {
+          res = userName;
+        } else {
+          res = "User name not found";
+        }
       } else {
-        res = "Please fill all the fields";
+        res = "Please enter all the fields";
       }
     } catch (e) {
-      return res = e.toString();
+      res = e.toString();
     }
     return res;
   }

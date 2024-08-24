@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:messaging_app/Login/Screen/homepage.dart';
 import 'package:messaging_app/Login/Screen/loginpage.dart';
 import 'package:messaging_app/Login/Screen/signup.dart';
+import 'package:messaging_app/chat/friends_list_page.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:timeago/timeago.dart';
@@ -30,11 +31,7 @@ class MyApp extends StatelessWidget {
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return const Homepage();
-          } else {
-            return const Loginpage();
-          }
+          return const Loginpage();
         },
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:messaging_app/chat/chatpage.dart';
 import 'package:messaging_app/Login/Screen/homepage.dart';
+import 'package:messaging_app/chat/friends_list_page.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:messaging_app/Login/Screen/signup.dart';
@@ -35,7 +36,7 @@ class _LoginpageState extends State<Loginpage> {
       email: emailcontroller.text,
       password: passwordcontroller.text,
     );
-    if (res == 'success') {
+    if (res.isNotEmpty) {
       setState(() {
         isloading = true;
       });
@@ -46,7 +47,7 @@ class _LoginpageState extends State<Loginpage> {
         text: 'Fetching your data',
       );
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => Chatpage(name: res)));
+          MaterialPageRoute(builder: (context) => FriendsListPage()));
     } else {
       setState(() {
         isloading = false;
