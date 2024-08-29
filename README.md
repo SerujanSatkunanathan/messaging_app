@@ -1,16 +1,13 @@
-# messaging_app
+# Space Talk
 
-A new Flutter project.
+Space Talk is a mobile chat application developed using Flutter and Firebase, designed to provide a seamless communication experience for users. It features secure login and signup functionalities, allowing users to create accounts and access the app with ease. Space Talk enables users to connect with others by sending friend requests via email addresses. Once a request is accepted, users can engage in real-time private conversations through the app's intuitive and user-friendly interface. Leveraging Firebase Firestore for real-time messaging, Space Talk ensures reliable and instant communication, making it an ideal platform for connecting with friends and family.
 
-## Getting Started
+![image](https://github.com/user-attachments/assets/8dc5eb2a-c7e6-473f-8af5-80515e7d2eb6)
+![image](https://github.com/user-attachments/assets/b1eff8b4-6268-4ab5-8b6d-4db6c82bfd0b)
+![image](https://github.com/user-attachments/assets/95da3969-0aff-413d-88fd-02aa2194f0ac)
+![image](https://github.com/user-attachments/assets/d803b95c-d17e-445d-bb78-c9d5523fd8b6)
+![Uploading image.png…]()
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
