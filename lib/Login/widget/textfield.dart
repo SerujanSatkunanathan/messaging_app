@@ -26,7 +26,7 @@ class TextfieldInput extends StatelessWidget {
           decoration: InputDecoration(
             labelText: labelText,
             hintText: hintText,
-            contentPadding: EdgeInsets.all(10),
+            contentPadding: const EdgeInsets.all(10),
             prefixIcon: Icon(icon),
             prefixIconColor: const Color.fromARGB(255, 0, 0, 0),
             border: InputBorder.none,
@@ -36,7 +36,8 @@ class TextfieldInput extends StatelessWidget {
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(30)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.cyanAccent),
+                borderSide:
+                    const BorderSide(width: 2, color: Colors.cyanAccent),
                 borderRadius: BorderRadius.circular(30)),
           )),
     );
