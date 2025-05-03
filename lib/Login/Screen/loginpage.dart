@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:messaging_app/Login/Screen/homepage.dart';
+import 'package:messaging_app/chat/friends_list_page.dart';
 import 'package:quickalert/quickalert.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:messaging_app/Login/Screen/signup.dart';
 import 'package:messaging_app/Login/widget/button.dart';
-import 'package:messaging_app/Login/widget/snackbar.dart';
 import 'package:messaging_app/Login/widget/textfield.dart';
 import 'package:messaging_app/Services/authentication.dart';
 
@@ -20,6 +18,7 @@ class _LoginpageState extends State<Loginpage> {
 
   final TextEditingController emailcontroller = TextEditingController();
   final TextEditingController passwordcontroller = TextEditingController();
+  //final TextEditingController namecontroller = TextEditingController();
   bool isloading = false;
 
   void despose() {
@@ -33,7 +32,7 @@ class _LoginpageState extends State<Loginpage> {
       email: emailcontroller.text,
       password: passwordcontroller.text,
     );
-    if (res == 'success') {
+    if (res.isNotEmpty) {
       setState(() {
         isloading = true;
       });
@@ -43,8 +42,8 @@ class _LoginpageState extends State<Loginpage> {
         title: 'Loading',
         text: 'Fetching your data',
       );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Homepage()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => FriendsListPage()));
     } else {
       setState(() {
         isloading = false;
