@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:messaging_app/Login/Screen/homepage.dart';
 import 'package:messaging_app/Login/Screen/loginpage.dart';
 import 'package:messaging_app/Login/Screen/signup.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +27,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: Loginpage(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return const Homepage();
+          } else {
+            return const Loginpage();
+          }
+        },
+      ),
     );
   }
 }

@@ -4,6 +4,7 @@ class TextfieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool ispass;
   final String hintText;
+  final String labelText;
   final IconData icon;
 
   const TextfieldInput({
@@ -12,6 +13,7 @@ class TextfieldInput extends StatelessWidget {
     this.ispass = false,
     required this.hintText,
     required this.icon,
+    required this.labelText,
   });
 
   @override
@@ -22,7 +24,7 @@ class TextfieldInput extends StatelessWidget {
           obscureText: ispass,
           controller: textEditingController,
           decoration: InputDecoration(
-            labelText: "Email",
+            labelText: labelText,
             hintText: hintText,
             contentPadding: EdgeInsets.all(10),
             prefixIcon: Icon(icon),
